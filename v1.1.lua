@@ -1,9 +1,4 @@
-game.StarterGui:SetCore("SendNotification", {
-Title = "Shadow Scripts - DOORS";
-Text = "0%";
-Icon = "rbxassetid://6646175695"; -- the image if u want. 
-Duration = 1; -- how long the notification should in secounds
-})
+
 local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 local Window = Rayfield:CreateWindow({
@@ -22,3 +17,74 @@ local Window = Rayfield:CreateWindow({
 	},
 	KeySystem = false
 })
+
+repeat
+	task.wait()
+until game:IsLoaded() and game.Players.LocalPlayer and game.Players.LocalPlayer.Character
+
+--#region Setup
+if getgenv then
+	if getgenv().DGEM_LOADED == true then
+		repeat
+			task.wait()
+		until false
+	end
+	getgenv().DGEM_LOADED = true
+end
+local entities = {
+	AllEntities = {
+		"All",
+		"Ambush",
+		"Eyes",
+		"Glitch",
+		"Grundge",
+		"Halt",
+		"Hide",
+		"None",
+		"Random",
+		"Rush",
+		"Screech",
+		"Seek",
+		"Shadow",
+		"Smiler",
+		"Timothy",
+		"Trashbag",
+		"Trollface"
+	},
+	DeveloperEntities = {
+		"Trollface",
+		"None",
+		"Smiler"
+	},
+	CustomEntities = {
+		"Grundge",
+		"Trashbag",
+		"None"
+	},
+	RegularEntities = {
+		"All",
+		"Ambush",
+		"Eyes",
+		"Glitch",
+		"Halt",
+		"Hide",
+		"Random",
+		"None",
+		"Rush",
+		"Screech",
+		"Seek",
+		"Shadow",
+		"Timothy"
+	}
+}
+for _, tb in pairs(entities) do
+	table.sort(tb)
+end
+
+if not isfile("interactedWithDiscordPrompt.txt") then
+	writefile("interactedWithDiscordPrompt.txt", ".")
+	local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Discord%20Inviter/Source.lua"))()
+	Inviter.Prompt({
+		name = "Zepsyy's Exploiting Community",
+		invite = "discord.gg/scripters",
+	})
