@@ -4,6 +4,7 @@ Text = "0%";
 Icon = "rbxassetid://6646175695"; -- the image if u want. 
 Duration = 1; -- how long the notification should in secounds
 })
+local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
 
 local Window = Rayfield:CreateWindow({
 	Name = "Doors Entity Replicator | " .. (identifyexecutor and identifyexecutor() or syn and "Synapse X" or "Unknown"),
